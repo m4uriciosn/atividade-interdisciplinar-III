@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulário</title>
+    
+    <style>
+        body {
+            background: rgb(36, 233, 240);
+            text-align: center;
+        }
+
+        section {
+            background-color: rgb(237, 239, 247);
+            border-radius: 10px;
+            text-align: center;
+            margin: auto;
+            padding: 15px;
+            width: 500px;
+            box-shadow: 5px 5px 15px;
+         }
+
+     </style>
+
+</head>
+<body>
+
+ <h1>Formulário</h1>
+
+    <section>
+
+        <form enctype="multipart/form-data" action="dados.php" method="POST" onsubmit="acessar()">
+        <h2>insira seus dados</h2>
+        <br>
+        usuário: <input type="text" id="user" required>
+        senha: <input type="password" id="senha" required>
+        
+        <p> <input type="submit" value="acessar">  <input type="button" value="cancelar" onclick="cancelar()"></p>
+        </form>
+     </section>
+
+     <script>
+         function acessar() {
+             let user = document.getElementById('user')
+             let senha = document.getElementById('senha')
+             let e = user.value
+             let s = senha.value
+             if (e.length == 0 || s.length == 0) {
+                 alert('confira seus dados')
+             }
+        }
+
+         function cancelar() {
+            var user = document.querySelector('#user')
+            var senha = document.getElementById('senha')
+            user.value = ''
+            senha.value = ''
+            
+         }
+        
+     </script>
+</body>
+</html>
